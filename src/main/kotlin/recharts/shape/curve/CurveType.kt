@@ -1,0 +1,79 @@
+package recharts.shape.curve
+
+@Suppress("ClassName")
+sealed class CurveType(name: String, ordinal: Int) : Comparable<CurveType> {
+    @JsName("name$")
+    private var _name: String = name
+
+    @JsName("ordinal$")
+    private var _ordinal: Int = ordinal
+
+    val name: String
+        get() = _name
+
+    val ordinal: Int
+        get() = _ordinal
+
+    override fun compareTo(other: CurveType) = ordinal.compareTo(other.ordinal)
+
+    override fun equals(other: Any?) = this === other
+
+    override fun hashCode(): Int = js("Kotlin.identityHashCode")(this)
+
+    override fun toString(): String = when (this) {
+        // TODO: Maybe change
+        is CurveFactory -> super.toString()
+        else -> name
+    }
+
+    object basis : CurveType("basis", 0)
+    object basisClosed : CurveType("basisClosed", 1)
+    object basisOpen : CurveType("basisOpen", 2)
+    object linear : CurveType("linear", 3)
+    object linearClosed : CurveType("linearClosed", 4)
+    object monotone : CurveType("monotone", 5)
+    object monotoneX : CurveType("monotoneX", 6)
+    object monotoneY : CurveType("monotoneY", 7)
+    object natural : CurveType("natural", 8)
+    object step : CurveType("step", 9)
+    object stepAfter : CurveType("stepAfter", 10)
+    object stepBefore : CurveType("stepBefore", 11)
+    data class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
+
+    companion object {
+        fun valueOf(value: String): CurveType {
+            return when (value) {
+                basis.name -> basis
+                basisClosed.name -> basisClosed
+                basisOpen.name -> basisOpen
+                linear.name -> linear
+                linearClosed.name -> linearClosed
+                monotone.name -> monotone
+                monotoneX.name -> monotoneX
+                monotoneY.name -> monotoneY
+                natural.name -> natural
+                step.name -> step
+                stepAfter.name -> stepAfter
+                stepBefore.name -> stepBefore
+                else -> throw IllegalArgumentException()
+            }
+        }
+
+        fun values(): Array<CurveType> {
+            return arrayOf(
+                basis,
+                basisClosed,
+                basisOpen,
+                linear,
+                linearClosed,
+                monotone,
+                monotoneX,
+                monotoneY,
+                natural,
+                step,
+                stepAfter,
+                stepBefore
+            )
+        }
+    }
+}

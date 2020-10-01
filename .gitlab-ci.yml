@@ -1,0 +1,46 @@
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+build:
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - .gradle
+      - build
+    policy: push
+  script: gradle --build-cache assemble
+  stage: build
+
+deploy:
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - .gradle
+      - build
+    policy: pull
+  needs: [ "test" ]
+  only:
+    - master
+  script:
+    - gradle publish
+  stage: deploy
+
+image: gradle:6.6.1-jdk11
+
+test:
+  cache:
+    key: "$CI_COMMIT_REF_NAME"
+    paths:
+      - .gradle
+      - build
+    policy: pull-push
+  needs: [ "build" ]
+  script: gradle check
+  stage: test
+
+# Disable the Gradle daemon for Continuous Integration servers as correctness
+# is usually a priority over speed in CI environments. Using a fresh
+# runtime for each build is more reliable since the runtime is completely
+# isolated from any previous builds.
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
