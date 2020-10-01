@@ -30,6 +30,49 @@ plugins {
 }
 
 publishing {
+    publications {
+        create<MavenPublication>("kotlin") {
+            artifact(tasks.getByName<Zip>("jsLegacySourcesJar"))
+            from(components["kotlin"])
+            pom {
+                ciManagement {
+                    system.set("GitLab CI")
+                    url.set("https://gitlab.com/gm666q/kotlin-recharts/-/pipelines")
+                }
+                description.set("Kotlin wrapper for Recharts library")
+                developers {
+                    developer {
+                        email.set("gm666q@gm666q.space")
+                        id.set("gm666q")
+                        name.set("Jan Śmiałkowski")
+                        timezone.set("Europe/London")
+                        url.set("https://gm666q.space")
+                    }
+                }
+                inceptionYear.set("2020")
+                issueManagement {
+                    system.set("GitLab")
+                    url.set("https://gitlab.com/gm666q/kotlin-recharts/-/issues")
+                }
+                licenses {
+                    license {
+                        comments.set("A business-friendly OSS license")
+                        distribution.set("repo")
+                        name.set("Apache License, Version 2.0")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                name.set("kotlin-recharts")
+                scm {
+                    connection.set("scm:git:https://gitlab.com/gm666q/kotlin-recharts.git")
+                    developerConnection.set("scm:git:ssh://git@gitlab.com/gm666q/kotlin-recharts.git")
+                    tag.set("HEAD")
+                    url.set("https://gitlab.com/gm666q/kotlin-recharts")
+                }
+                url.set("https://gitlab.com/gm666q/kotlin-recharts")
+            }
+        }
+    }
     repositories {
         maven {
             authentication {

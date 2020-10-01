@@ -8,6 +8,11 @@ build:
       - .gradle
       - build
     policy: push
+  only:
+    - develop
+    - master
+    - merge_requests
+    - tags
   script: gradle --build-cache assemble
   stage: build
 
@@ -21,6 +26,7 @@ deploy:
   needs: [ "test" ]
   only:
     - master
+    - tags
   script:
     - gradle publish
   stage: deploy
@@ -39,6 +45,11 @@ test:
       - build
     policy: pull-push
   needs: [ "build" ]
+  only:
+    - develop
+    - master
+    - merge_requests
+    - tags
   script: gradle check
   stage: test
 
