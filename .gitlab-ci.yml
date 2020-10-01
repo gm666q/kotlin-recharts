@@ -27,6 +27,10 @@ deploy:
 
 image: gradle:6.6.1-jdk11
 
+include:
+  - template: Secret-Detection.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
+
 test:
   cache:
     key: "$CI_COMMIT_REF_NAME"
