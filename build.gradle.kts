@@ -88,7 +88,7 @@ publishing {
                 scm {
                     connection.set("scm:git:https://gitlab.com/gm666q/kotlin-recharts.git")
                     developerConnection.set("scm:git:ssh://git@gitlab.com/gm666q/kotlin-recharts.git")
-                    tag.set("HEAD")
+                    tag.set("v2.0.0-beta.7-2")
                     url.set("https://gitlab.com/gm666q/kotlin-recharts")
                 }
                 url.set("https://gitlab.com/gm666q/kotlin-recharts")
