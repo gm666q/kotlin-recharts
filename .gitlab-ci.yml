@@ -25,7 +25,6 @@ deploy:
     policy: pull
   needs: [ "test" ]
   only:
-    - master
     - tags
   script:
     - gradle publish

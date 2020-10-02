@@ -1,31 +1,9 @@
 package recharts.shape.curve
 
+import recharts.kotlin.Union
+
 @Suppress("ClassName")
-sealed class CurveType(name: String, ordinal: Int) : Comparable<CurveType> {
-    @JsName("name$")
-    private var _name: String = name
-
-    @JsName("ordinal$")
-    private var _ordinal: Int = ordinal
-
-    val name: String
-        get() = _name
-
-    val ordinal: Int
-        get() = _ordinal
-
-    override fun compareTo(other: CurveType) = ordinal.compareTo(other.ordinal)
-
-    override fun equals(other: Any?) = this === other
-
-    override fun hashCode(): Int = js("Kotlin.identityHashCode")(this)
-
-    override fun toString(): String = when (this) {
-        // TODO: Maybe change
-        is CurveFactory -> super.toString()
-        else -> name
-    }
-
+sealed class CurveType(name: String, ordinal: Int) : Union<CurveType>(name, ordinal) {
     object basis : CurveType("basis", 0)
     object basisClosed : CurveType("basisClosed", 1)
     object basisOpen : CurveType("basisOpen", 2)
@@ -38,7 +16,7 @@ sealed class CurveType(name: String, ordinal: Int) : Comparable<CurveType> {
     object step : CurveType("step", 9)
     object stepAfter : CurveType("stepAfter", 10)
     object stepBefore : CurveType("stepBefore", 11)
-    data class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
+    class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
 
     companion object {
         fun valueOf(value: String): CurveType {

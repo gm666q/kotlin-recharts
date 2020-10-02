@@ -1,9 +1,12 @@
 package recharts.chart.generatecategoricalchart
 
-import react.RProps
+import recharts.kotlin.RechartsProps
+import recharts.kotlin.properties.EnumOrNullProp
+import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.util.types.LayoutType
 import recharts.util.types.Margin
 
-external interface CategoricalChartProps : RProps {
+external interface CategoricalChartProps : RechartsProps {
     var className: String?
     var compact: Boolean?
     var data: Array<Any>?
@@ -25,3 +28,14 @@ external interface CategoricalChartProps : RProps {
     var throttleDelay: Number?
     var width: Number?
 }
+
+var CategoricalChartProps.barCategoryGap by NullNumberOrStringProp()
+var CategoricalChartProps.barGap by NullNumberOrStringProp()
+var CategoricalChartProps.barSize by NullNumberOrStringProp()
+var CategoricalChartProps.cx by NullNumberOrStringProp()
+var CategoricalChartProps.cy by NullNumberOrStringProp()
+var CategoricalChartProps.innerRadius by EnumOrNullProp(LayoutType::valueOf)
+var CategoricalChartProps.layout by EnumOrNullProp(LayoutType::valueOf)
+var CategoricalChartProps.outerRadius by EnumOrNullProp(LayoutType::valueOf)
+var CategoricalChartProps.stackOffset by EnumOrNullProp(CategoricalChartStackOffset::valueOf)
+var CategoricalChartProps.syncId by NullNumberOrStringProp()
