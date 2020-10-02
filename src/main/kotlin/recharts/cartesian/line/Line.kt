@@ -8,6 +8,6 @@ import react.RState
 import react.ReactElement
 
 @JsName("Line")
-external class Line : PureComponent<LineProps, RState> {
+external class Line : PureComponent<Props, RState> {
     override fun render(): ReactElement?
 }

@@ -8,6 +8,6 @@ import react.RState
 import react.ReactElement
 
 @JsName("Curve")
-external class Curve : PureComponent<CurveProps, RState> {
+external class Curve : PureComponent<Props, RState> {
     override fun render(): ReactElement?
 }

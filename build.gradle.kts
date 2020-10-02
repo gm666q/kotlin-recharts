@@ -1,5 +1,26 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 
+version = "2.0.0-beta.7-2"
+
+bintray {
+    key = System.getenv("BINTRAY_KEY")
+    pkg.run {
+        desc = "Kotlin wrapper for Recharts library"
+        issueTrackerUrl = "https://gitlab.com/gm666q/kotlin-recharts/-/issues"
+        name = project.name
+        publicDownloadNumbers = true
+        repo = "kotlin-recharts"
+        setLicenses("Apache-2.0")
+        vcsUrl = "https://gitlab.com/gm666q/kotlin-recharts.git"
+        version.run {
+            name = project.version.toString()
+        }
+        websiteUrl = "https://gitlab.com/gm666q/kotlin-recharts"
+    }
+    setPublications("kotlin")
+    user = System.getenv("BINTRAY_USER")
+}
+
 group = "space.gm666q"
 
 kotlin {
@@ -24,6 +45,7 @@ kotlin {
 }
 
 plugins {
+    id("com.jfrog.bintray") version "1.8.5"
     id("org.gradle.maven-publish")
     id("org.jetbrains.dokka") version "1.4.10"
     kotlin("js") version "1.4.10"
@@ -66,7 +88,7 @@ publishing {
                 scm {
                     connection.set("scm:git:https://gitlab.com/gm666q/kotlin-recharts.git")
                     developerConnection.set("scm:git:ssh://git@gitlab.com/gm666q/kotlin-recharts.git")
-                    tag.set("HEAD")
+                    tag.set("v2.0.0-beta.7-2")
                     url.set("https://gitlab.com/gm666q/kotlin-recharts")
                 }
                 url.set("https://gitlab.com/gm666q/kotlin-recharts")
@@ -104,5 +126,3 @@ tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
     gradleVersion = "6.6.1"
 }
-
-version = "2.0.0-beta.7-1"
