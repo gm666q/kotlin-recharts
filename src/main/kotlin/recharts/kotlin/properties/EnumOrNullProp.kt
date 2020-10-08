@@ -1,11 +1,10 @@
 package recharts.kotlin.properties
 
-import recharts.kotlin.RechartsProps
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class EnumOrNullProp<T : Enum<T>>(private val valueOf: (value: String) -> T) : ReadWriteProperty<RechartsProps, T?> {
-    override fun getValue(thisRef: RechartsProps, property: KProperty<*>): T? {
+class EnumOrNullProp<T : Enum<T>>(private val valueOf: (value: String) -> T) : ReadWriteProperty<Any, T?> {
+    override fun getValue(thisRef: Any, property: KProperty<*>): T? {
         val value = thisRef.asDynamic()[property.name]
         return if (value is String) {
             try {
@@ -18,7 +17,7 @@ class EnumOrNullProp<T : Enum<T>>(private val valueOf: (value: String) -> T) : R
         }
     }
 
-    override fun setValue(thisRef: RechartsProps, property: KProperty<*>, value: T?) {
+    override fun setValue(thisRef: Any, property: KProperty<*>, value: T?) {
         thisRef.asDynamic()[property.name] = value?.toString()
     }
 }

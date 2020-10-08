@@ -1,12 +1,11 @@
 package recharts.kotlin.properties
 
 import recharts.kotlin.NumberOrString
-import recharts.kotlin.RechartsProps
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class NullNumberOrStringProp : ReadWriteProperty<RechartsProps, NumberOrString?> {
-    override fun getValue(thisRef: RechartsProps, property: KProperty<*>): NumberOrString? {
+class NullNumberOrStringProp : ReadWriteProperty<Any, NumberOrString?> {
+    override fun getValue(thisRef: Any, property: KProperty<*>): NumberOrString? {
         return when (val value = thisRef.asDynamic()[property.name]) {
             is Number -> NumberOrString.Number(value as Number)
             is String -> NumberOrString.String(value as String)
@@ -14,7 +13,7 @@ class NullNumberOrStringProp : ReadWriteProperty<RechartsProps, NumberOrString?>
         }
     }
 
-    override fun setValue(thisRef: RechartsProps, property: KProperty<*>, value: NumberOrString?) {
+    override fun setValue(thisRef: Any, property: KProperty<*>, value: NumberOrString?) {
         if (value == null) {
             thisRef.asDynamic()[property.name] = null
         } else {

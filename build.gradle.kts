@@ -1,6 +1,6 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 
-version = "2.0.0-beta.7-2"
+version = "2.0.0-beta.7-3"
 
 bintray {
     key = System.getenv("BINTRAY_KEY")
@@ -30,8 +30,8 @@ kotlin {
     sourceSets {
         main {
             dependencies {
-                api("org.jetbrains:kotlin-react:16.13.1-pre.120-kotlin-1.4.10")
-                api("org.jetbrains:kotlin-react-dom:16.13.1-pre.120-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react:16.13.1-pre.124-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react-dom:16.13.1-pre.124-kotlin-1.4.10")
 
                 api(npm("recharts", "^2.0.0-beta.7"))
             }
@@ -88,7 +88,7 @@ publishing {
                 scm {
                     connection.set("scm:git:https://gitlab.com/gm666q/kotlin-recharts.git")
                     developerConnection.set("scm:git:ssh://git@gitlab.com/gm666q/kotlin-recharts.git")
-                    tag.set("v2.0.0-beta.7-2")
+                    tag.set("v${project.version}")
                     url.set("https://gitlab.com/gm666q/kotlin-recharts")
                 }
                 url.set("https://gitlab.com/gm666q/kotlin-recharts")
