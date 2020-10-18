@@ -17,15 +17,12 @@ class GridLineTypeOrNullProp : ReadWriteProperty<CartesianGridProps, GridLineTyp
         }
 
     override fun setValue(thisRef: CartesianGridProps, property: KProperty<*>, value: GridLineType?) {
-        if (value == null) {
-            thisRef.asDynamic()[property.name] = null
-        } else {
-            when (value) {
-                is GridLineType.Boolean -> thisRef.asDynamic()[property.name] = value.value
-                is GridLineType.Function -> thisRef.asDynamic()[property.name] = value.value
-                is GridLineType.PresentationAttributes -> thisRef.asDynamic()[property.name] = value.value
-                is GridLineType.ReactElement -> thisRef.asDynamic()[property.name] = value.value
-            }
+        thisRef.asDynamic()[property.name] = when (value) {
+            is GridLineType.Boolean -> value.value
+            is GridLineType.Function -> value.value
+            is GridLineType.PresentationAttributes -> value.value
+            is GridLineType.ReactElement -> value.value
+            null -> null
         }
     }
 }

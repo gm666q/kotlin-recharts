@@ -33,7 +33,7 @@ external interface ScatterProps : RechartsProps {
     //zAxis?: Omit<ZAxisProps, 'scale'> & { scale: D3Scale<string | number> };
 }
 
-var ScatterProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var ScatterProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var ScatterProps.dataKey by DataKeyOrNullProp<Any>()
 var ScatterProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var ScatterProps.lineJointType by CurveTypeOrNullProp()

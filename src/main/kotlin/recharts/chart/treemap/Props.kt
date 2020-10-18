@@ -4,14 +4,13 @@ import react.ReactElement
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.DataKeyOrNullProp
 import recharts.kotlin.properties.DataKeyProp
+import recharts.kotlin.properties.EnumOrNullProp
 import recharts.util.types.TreemapNode
 
 // TODO
 external interface Props : RechartsProps {
     var animationBegin: Number?
     var animationDuration: Number?
-
-    //animationEasing?: 'ease' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'linear';
     var animationId: Number?
     var aspectRatio: Number?
     var children: Any?
@@ -33,10 +32,10 @@ external interface Props : RechartsProps {
     var onMouseLeave: ((node: TreemapNode, e: Any) -> Unit)?
     var stroke: String?
     var style: Any?
-
-    //type?: 'flat' | 'nest';
     var width: Number?
 }
 
+var Props.animationEasing by EnumOrNullProp(TreemapAnimationEasing::realValueOf)
 var Props.dataKey by DataKeyOrNullProp<Any>()
 var Props.nameKey by DataKeyOrNullProp<Any>()
+var Props.type by EnumOrNullProp(TreemapType::valueOf)

@@ -77,6 +77,8 @@ fun main() {
             }
             yAxis {
             }
+            tooltip {
+            }
         }
     }
 }

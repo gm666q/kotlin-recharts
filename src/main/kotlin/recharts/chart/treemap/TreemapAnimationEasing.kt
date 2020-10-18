@@ -1,9 +1,9 @@
-package recharts.util.types
+package recharts.chart.treemap
 
 import kotlinx.html.AttributeEnum
 
 @Suppress("EnumEntryName")
-enum class AnimationTiming(override val realValue: String) : AttributeEnum {
+enum class TreemapAnimationEasing(override val realValue: String) : AttributeEnum {
     ease("ease"),
     easeIn("ease-in"),
     easeInOut("ease-in-out"),
@@ -13,7 +13,7 @@ enum class AnimationTiming(override val realValue: String) : AttributeEnum {
     override fun toString(): String = realValue
 
     companion object {
-        fun realValueOf(value: String): AnimationTiming {
+        fun realValueOf(value: String): TreemapAnimationEasing {
             return when (value) {
                 ease.realValue -> ease
                 easeIn.realValue -> easeIn

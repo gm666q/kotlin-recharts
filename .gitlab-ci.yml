@@ -42,7 +42,7 @@ test:
     paths:
       - .gradle
       - build
-    policy: pull-push
+    policy: pull
   needs: [ "build" ]
   only:
     - develop

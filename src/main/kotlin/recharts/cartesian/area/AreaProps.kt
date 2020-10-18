@@ -30,7 +30,7 @@ external interface AreaProps : InternalAreaProps {
     var onAnimationStart: (() -> Unit)?
 }
 
-var AreaProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var AreaProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var AreaProps.dataKey by DataKeyProp<Any>()
 var AreaProps.layout by EnumOrNullProp(AreaLayout::valueOf)
 var AreaProps.legendType by EnumOrNullProp(LegendType::valueOf)

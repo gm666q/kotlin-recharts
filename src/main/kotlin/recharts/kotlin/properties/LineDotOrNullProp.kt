@@ -17,15 +17,12 @@ class LineDotOrNullProp : ReadWriteProperty<LineProps, LineDot?> {
         }
 
     override fun setValue(thisRef: LineProps, property: KProperty<*>, value: LineDot?) {
-        if (value == null) {
-            thisRef.asDynamic()[property.name] = null
-        } else {
-            when (value) {
-                is LineDot.Boolean -> thisRef.asDynamic()[property.name] = value.value
-                is LineDot.DotProps -> thisRef.asDynamic()[property.name] = value.value
-                is LineDot.Function -> thisRef.asDynamic()[property.name] = value.value
-                is LineDot.ReactElement -> thisRef.asDynamic()[property.name] = value.value
-            }
+        thisRef.asDynamic()[property.name] = when (value) {
+            is LineDot.Boolean -> value.value
+            is LineDot.DotProps -> value.value
+            is LineDot.Function -> value.value
+            is LineDot.ReactElement -> value.value
+            null -> null
         }
     }
 }

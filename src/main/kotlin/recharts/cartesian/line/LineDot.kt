@@ -4,10 +4,10 @@ import org.w3c.dom.svg.SVGElement
 import recharts.kotlin.Union
 
 sealed class LineDot(name: String, ordinal: Int) : Union<LineDot>(name, ordinal) {
-    class Boolean(val value: kotlin.Boolean) : LineDot("Boolean", 0)
-    class DotProps(val value: recharts.shape.dot.Props) : LineDot("DotProps", 1)
-    class Function(val value: (props: Any) -> SVGElement) : LineDot("Function", 2)
-    class ReactElement(val value: react.ReactElement/*<SVGElement>*/) : LineDot("ReactElement", 3)
+    data class Boolean(val value: kotlin.Boolean) : LineDot("Boolean", 0)
+    data class DotProps(val value: recharts.shape.dot.Props) : LineDot("DotProps", 1)
+    data class Function(val value: (props: Any) -> SVGElement) : LineDot("Function", 2)
+    data class ReactElement(val value: react.ReactElement/*<SVGElement>*/) : LineDot("ReactElement", 3)
 
     companion object {
         fun <T> valueOf(value: String): LineDot {

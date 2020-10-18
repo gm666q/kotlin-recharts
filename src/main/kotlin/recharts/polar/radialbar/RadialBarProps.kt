@@ -35,7 +35,7 @@ external interface RadialBarProps : RechartsProps {
 }
 
 var RadialBarProps.angleAxisId by NullNumberOrStringProp()
-var RadialBarProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var RadialBarProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var RadialBarProps.animationId by NullNumberOrStringProp()
 var RadialBarProps.cornerRadius by NullNumberOrStringProp()
 var RadialBarProps.dataKey by DataKeyProp<Any>()

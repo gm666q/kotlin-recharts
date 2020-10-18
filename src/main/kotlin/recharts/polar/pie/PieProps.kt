@@ -30,7 +30,7 @@ external interface PieProps : PieDef, RechartsProps {
     var sectors: Array<PieSectorDataItem>?
 }
 
-var PieProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var PieProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var PieProps.dataKey by DataKeyProp<Any>()
 var PieProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var PieProps.nameKey by DataKeyOrNullProp<Any>()

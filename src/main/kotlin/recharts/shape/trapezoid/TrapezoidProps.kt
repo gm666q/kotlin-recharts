@@ -16,4 +16,4 @@ external interface TrapezoidProps : RechartsProps {
     var y: Number?
 }
 
-var TrapezoidProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var TrapezoidProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)

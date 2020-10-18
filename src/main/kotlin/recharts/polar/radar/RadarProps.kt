@@ -30,7 +30,7 @@ external interface RadarProps : RechartsProps {
 }
 
 var RadarProps.angleAxisId by NullNumberOrStringProp()
-var RadarProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var RadarProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var RadarProps.dataKey by DataKeyProp<Any>()
 var RadarProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var RadarProps.radiusAxisId by NullNumberOrStringProp()

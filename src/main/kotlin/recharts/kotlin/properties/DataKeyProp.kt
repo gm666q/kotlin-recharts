@@ -15,10 +15,10 @@ class DataKeyProp<T> : ReadWriteProperty<RechartsProps, DataKey<T>> {
         }
 
     override fun setValue(thisRef: RechartsProps, property: KProperty<*>, value: DataKey<T>) {
-        when (value) {
-            is DataKey.Function -> thisRef.asDynamic()[property.name] = value.value
-            is DataKey.Number -> thisRef.asDynamic()[property.name] = value.value
-            is DataKey.String -> thisRef.asDynamic()[property.name] = value.value
+        thisRef.asDynamic()[property.name] = when (value) {
+            is DataKey.Function -> value.value
+            is DataKey.Number -> value.value
+            is DataKey.String -> value.value
         }
     }
 }

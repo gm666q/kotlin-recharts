@@ -50,4 +50,4 @@ external interface TooltipProps<TValue : ValueType, TName : NameType> : DefaultP
     var wrapperStyle: CSSProperties?
 }
 
-var <TValue : ValueType, TName : NameType> TooltipProps<TValue, TName>.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var <TValue : ValueType, TName : NameType> TooltipProps<TValue, TName>.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)

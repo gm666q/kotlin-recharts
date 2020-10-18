@@ -20,7 +20,7 @@ external interface LineProps : InternalLineProps {
 }
 
 var LineProps.activeDot by LineDotOrNullProp()
-var LineProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var LineProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var LineProps.dataKey by DataKeyOrNullProp<Any>()
 var LineProps.dot by LineDotOrNullProp()
 var LineProps.layout by EnumOrNullProp(LineLayout::valueOf)

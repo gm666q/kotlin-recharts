@@ -25,7 +25,7 @@ external interface BarProps : InternalBarProps {
     //shape?: ReactElement<SVGElement> | ((props: any) => SVGElement);
 }
 
-var BarProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var BarProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var BarProps.dataKey by DataKeyProp<Any>()
 var BarProps.layout by EnumOrNullProp(BarLayout::valueOf)
 var BarProps.legendType by EnumOrNullProp(LegendType::valueOf)

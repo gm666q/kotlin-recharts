@@ -23,7 +23,7 @@ external interface FunnelProps : InternalFunnelProps {
     var onAnimationEnd: (() -> Unit)?
 }
 
-var FunnelProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var FunnelProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var FunnelProps.dataKey by DataKeyProp<Any>()
 var FunnelProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var FunnelProps.nameKey by DataKeyOrNullProp<Any>()

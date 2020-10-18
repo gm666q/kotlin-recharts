@@ -16,42 +16,38 @@ sealed class CurveType(name: String, ordinal: Int) : Union<CurveType>(name, ordi
     object step : CurveType("step", 9)
     object stepAfter : CurveType("stepAfter", 10)
     object stepBefore : CurveType("stepBefore", 11)
-    class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
+    data class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
 
     companion object {
-        fun valueOf(value: String): CurveType {
-            return when (value) {
-                basis.name -> basis
-                basisClosed.name -> basisClosed
-                basisOpen.name -> basisOpen
-                linear.name -> linear
-                linearClosed.name -> linearClosed
-                monotone.name -> monotone
-                monotoneX.name -> monotoneX
-                monotoneY.name -> monotoneY
-                natural.name -> natural
-                step.name -> step
-                stepAfter.name -> stepAfter
-                stepBefore.name -> stepBefore
-                else -> throw IllegalArgumentException()
-            }
+        fun valueOf(value: String): CurveType = when (value) {
+            basis.name -> basis
+            basisClosed.name -> basisClosed
+            basisOpen.name -> basisOpen
+            linear.name -> linear
+            linearClosed.name -> linearClosed
+            monotone.name -> monotone
+            monotoneX.name -> monotoneX
+            monotoneY.name -> monotoneY
+            natural.name -> natural
+            step.name -> step
+            stepAfter.name -> stepAfter
+            stepBefore.name -> stepBefore
+            else -> throw IllegalArgumentException()
         }
 
-        fun values(): Array<CurveType> {
-            return arrayOf(
-                basis,
-                basisClosed,
-                basisOpen,
-                linear,
-                linearClosed,
-                monotone,
-                monotoneX,
-                monotoneY,
-                natural,
-                step,
-                stepAfter,
-                stepBefore
-            )
-        }
+        fun values(): Array<CurveType> = arrayOf(
+            basis,
+            basisClosed,
+            basisOpen,
+            linear,
+            linearClosed,
+            monotone,
+            monotoneX,
+            monotoneY,
+            natural,
+            step,
+            stepAfter,
+            stepBefore
+        )
     }
 }

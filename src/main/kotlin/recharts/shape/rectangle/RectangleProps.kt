@@ -18,4 +18,4 @@ external interface RectangleProps : RechartsProps {
     var y: Number?
 }
 
-var RectangleProps.animationEasing by EnumOrNullProp(AnimationTiming::valueOf)
+var RectangleProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
