@@ -1,6 +1,6 @@
 package recharts.polar.pie
 
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 external interface PieDef {
     var endAngle: Number?
@@ -8,8 +8,8 @@ external interface PieDef {
     var startAngle: Number?
 }
 
-var PieDef.cornerRadius by NullNumberOrStringProp()
-var PieDef.cx by NullNumberOrStringProp()
-var PieDef.cy by NullNumberOrStringProp()
-var PieDef.innerRadius by NullNumberOrStringProp()
-var PieDef.outerRadius by NullNumberOrStringProp()
+var PieDef.cornerRadius by NumberOrStringOrNullProp()
+var PieDef.cx by NumberOrStringOrNullProp()
+var PieDef.cy by NumberOrStringOrNullProp()
+var PieDef.innerRadius by NumberOrStringOrNullProp()
+var PieDef.outerRadius by NumberOrStringOrNullProp()

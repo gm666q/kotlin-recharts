@@ -1,7 +1,7 @@
 package recharts.cartesian.referenceline
 
 import recharts.kotlin.RechartsProps
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.ViewBox
 
 external interface InternalReferenceLineProps : RechartsProps {
@@ -10,4 +10,4 @@ external interface InternalReferenceLineProps : RechartsProps {
     //yAxis?: Omit<YAxisProps, 'scale'> & { scale: D3Scale<string | number> };
 }
 
-var InternalReferenceLineProps.clipPathId by NullNumberOrStringProp()
+var InternalReferenceLineProps.clipPathId by NumberOrStringOrNullProp()

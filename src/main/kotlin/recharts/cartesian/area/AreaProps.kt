@@ -3,7 +3,7 @@ package recharts.cartesian.area
 import recharts.kotlin.properties.CurveTypeOrNullProp
 import recharts.kotlin.properties.DataKeyProp
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.AnimationTiming
 import recharts.util.types.LegendType
 import recharts.util.types.TooltipType
@@ -34,10 +34,10 @@ var AreaProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var AreaProps.dataKey by DataKeyProp<Any>()
 var AreaProps.layout by EnumOrNullProp(AreaLayout::valueOf)
 var AreaProps.legendType by EnumOrNullProp(LegendType::valueOf)
-var AreaProps.name by NullNumberOrStringProp()
-var AreaProps.stackId by NullNumberOrStringProp()
+var AreaProps.name by NumberOrStringOrNullProp()
+var AreaProps.stackId by NumberOrStringOrNullProp()
 var AreaProps.tooltipType by EnumOrNullProp(TooltipType::valueOf)
 var AreaProps.type by CurveTypeOrNullProp()
-var AreaProps.unit by NullNumberOrStringProp()
-var AreaProps.xAxisId by NullNumberOrStringProp()
-var AreaProps.yAxisId by NullNumberOrStringProp()
+var AreaProps.unit by NumberOrStringOrNullProp()
+var AreaProps.xAxisId by NumberOrStringOrNullProp()
+var AreaProps.yAxisId by NumberOrStringOrNullProp()

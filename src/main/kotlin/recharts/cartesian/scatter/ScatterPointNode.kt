@@ -1,9 +1,9 @@
 package recharts.cartesian.scatter
 
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 external interface ScatterPointNode
 
-var ScatterPointNode.x by NullNumberOrStringProp()
-var ScatterPointNode.y by NullNumberOrStringProp()
-var ScatterPointNode.z by NullNumberOrStringProp()
+var ScatterPointNode.x by NumberOrStringOrNullProp()
+var ScatterPointNode.y by NumberOrStringOrNullProp()
+var ScatterPointNode.z by NumberOrStringOrNullProp()

@@ -3,7 +3,7 @@ package recharts.cartesian.zaxis
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.DataKeyOrNullProp
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 // TODO
 external interface Props : RechartsProps {
@@ -12,7 +12,7 @@ external interface Props : RechartsProps {
 }
 
 var Props.dataKey by DataKeyOrNullProp<Any>()
-var Props.name by NullNumberOrStringProp()
+var Props.name by NumberOrStringOrNullProp()
 var Props.type by EnumOrNullProp(ZAxisType::valueOf)
-var Props.unit by NullNumberOrStringProp()
-var Props.zAxisId by NullNumberOrStringProp()
+var Props.unit by NumberOrStringOrNullProp()
+var Props.zAxisId by NumberOrStringOrNullProp()

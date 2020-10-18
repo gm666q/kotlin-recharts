@@ -1,7 +1,7 @@
 package recharts.cartesian.referenceline
 
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 // TODO
 external interface ReferenceLineProps : InternalReferenceLineProps {
@@ -14,10 +14,10 @@ external interface ReferenceLineProps : InternalReferenceLineProps {
     //shape?: ReactElement<SVGElement> | ((props: any) => SVGElement);
 }
 
-var ReferenceLineProps.className by NullNumberOrStringProp()
+var ReferenceLineProps.className by NumberOrStringOrNullProp()
 var ReferenceLineProps.ifOverflow by EnumOrNullProp(ReferenceLineIfOverflow::valueOf)
 var ReferenceLineProps.position by EnumOrNullProp(ReferenceLinePosition::valueOf)
-var ReferenceLineProps.x by NullNumberOrStringProp()
-var ReferenceLineProps.xAxisId by NullNumberOrStringProp()
-var ReferenceLineProps.y by NullNumberOrStringProp()
-var ReferenceLineProps.yAxisId by NullNumberOrStringProp()
+var ReferenceLineProps.x by NumberOrStringOrNullProp()
+var ReferenceLineProps.xAxisId by NumberOrStringOrNullProp()
+var ReferenceLineProps.y by NumberOrStringOrNullProp()
+var ReferenceLineProps.yAxisId by NumberOrStringOrNullProp()

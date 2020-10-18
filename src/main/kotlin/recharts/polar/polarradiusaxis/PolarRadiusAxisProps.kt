@@ -1,7 +1,7 @@
 package recharts.polar.polarradiusaxis
 
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.BaseAxisProps
 import recharts.util.types.TickItem
 
@@ -13,4 +13,4 @@ external interface PolarRadiusAxisProps : BaseAxisProps {
 }
 
 var PolarRadiusAxisProps.orientation by EnumOrNullProp(PolarRadiusAxisOrientation::valueOf)
-var PolarRadiusAxisProps.radiusAxisId by NullNumberOrStringProp()
+var PolarRadiusAxisProps.radiusAxisId by NumberOrStringOrNullProp()

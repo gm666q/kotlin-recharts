@@ -15,7 +15,7 @@ class LabelContentTypeOrNullProp : ReadWriteProperty<LabelProps, LabelContentTyp
 
     override fun setValue(thisRef: LabelProps, property: KProperty<*>, value: LabelContentType?) {
         thisRef.asDynamic()[property.name] = when (value) {
-            is LabelContentType.Function -> value.value
+            //is LabelContentType.Function -> value.value
             is LabelContentType.ReactElement -> value.value
             null -> null
         }

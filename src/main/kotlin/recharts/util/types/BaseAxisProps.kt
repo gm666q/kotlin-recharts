@@ -3,7 +3,7 @@ package recharts.util.types
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.DataKeyOrNullProp
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 // TODO
 /**
@@ -101,4 +101,4 @@ var BaseAxisProps.type by EnumOrNullProp(BaseAxisType::valueOf)
 /**
  * The unit of data displayed in the axis
  */
-var BaseAxisProps.unit by NullNumberOrStringProp()
+var BaseAxisProps.unit by NumberOrStringOrNullProp()

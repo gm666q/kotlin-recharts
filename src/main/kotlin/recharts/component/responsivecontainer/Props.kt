@@ -2,7 +2,7 @@ package recharts.component.responsivecontainer
 
 import react.ReactElement
 import recharts.kotlin.RechartsProps
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 external interface Props : RechartsProps {
     var aspect: Number?
@@ -11,9 +11,9 @@ external interface Props : RechartsProps {
     var maxHeight: Number?
 }
 
-var Props.className by NullNumberOrStringProp()
-var Props.height by NullNumberOrStringProp()
-var Props.id by NullNumberOrStringProp()
-var Props.minHeight by NullNumberOrStringProp()
-var Props.minWidth by NullNumberOrStringProp()
-var Props.width by NullNumberOrStringProp()
+var Props.className by NumberOrStringOrNullProp()
+var Props.height by NumberOrStringOrNullProp()
+var Props.id by NumberOrStringOrNullProp()
+var Props.minHeight by NumberOrStringOrNullProp()
+var Props.minWidth by NumberOrStringOrNullProp()
+var Props.width by NumberOrStringOrNullProp()

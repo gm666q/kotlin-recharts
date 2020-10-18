@@ -1,7 +1,7 @@
 package recharts.cartesian.referencearea
 
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 
 external interface ReferenceAreaProps : InternalReferenceAreaProps {
     var alwaysShow: Boolean?
@@ -9,11 +9,11 @@ external interface ReferenceAreaProps : InternalReferenceAreaProps {
     //shape?: ReactElement<SVGElement> | ((props: any) => SVGElement);
 }
 
-var ReferenceAreaProps.className by NullNumberOrStringProp()
+var ReferenceAreaProps.className by NumberOrStringOrNullProp()
 var ReferenceAreaProps.ifOverflow by EnumOrNullProp(ReferenceAreaIfOverflow::valueOf)
-var ReferenceAreaProps.x1 by NullNumberOrStringProp()
-var ReferenceAreaProps.x2 by NullNumberOrStringProp()
-var ReferenceAreaProps.xAxisId by NullNumberOrStringProp()
-var ReferenceAreaProps.y1 by NullNumberOrStringProp()
-var ReferenceAreaProps.y2 by NullNumberOrStringProp()
-var ReferenceAreaProps.yAxisId by NullNumberOrStringProp()
+var ReferenceAreaProps.x1 by NumberOrStringOrNullProp()
+var ReferenceAreaProps.x2 by NumberOrStringOrNullProp()
+var ReferenceAreaProps.xAxisId by NumberOrStringOrNullProp()
+var ReferenceAreaProps.y1 by NumberOrStringOrNullProp()
+var ReferenceAreaProps.y2 by NumberOrStringOrNullProp()
+var ReferenceAreaProps.yAxisId by NumberOrStringOrNullProp()

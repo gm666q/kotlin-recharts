@@ -1,7 +1,7 @@
 package recharts.cartesian.xaxis
 
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.BaseAxisProps
 
 // TODO
@@ -19,4 +19,4 @@ external interface Props : BaseAxisProps {
 }
 
 var Props.orientation by EnumOrNullProp(XAxisOrientation::valueOf)
-var Props.xAxisId by NullNumberOrStringProp()
+var Props.xAxisId by NumberOrStringOrNullProp()

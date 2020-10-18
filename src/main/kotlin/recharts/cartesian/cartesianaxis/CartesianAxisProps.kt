@@ -2,7 +2,7 @@ package recharts.cartesian.cartesianaxis
 
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.ViewBox
 
 external interface CartesianAxisProps : RechartsProps {
@@ -30,4 +30,4 @@ external interface CartesianAxisProps : RechartsProps {
 }
 
 var CartesianAxisProps.orientation by EnumOrNullProp(CartesianAxisOrientation::valueOf)
-var CartesianAxisProps.unit by NullNumberOrStringProp()
+var CartesianAxisProps.unit by NumberOrStringOrNullProp()

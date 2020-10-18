@@ -4,7 +4,7 @@ import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.CurveTypeOrNullProp
 import recharts.kotlin.properties.DataKeyOrNullProp
 import recharts.kotlin.properties.EnumOrNullProp
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.AnimationTiming
 import recharts.util.types.LegendType
 import recharts.util.types.TooltipType
@@ -38,8 +38,8 @@ var ScatterProps.dataKey by DataKeyOrNullProp<Any>()
 var ScatterProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var ScatterProps.lineJointType by CurveTypeOrNullProp()
 var ScatterProps.lineType by EnumOrNullProp(ScatterLineType::valueOf)
-var ScatterProps.name by NullNumberOrStringProp()
+var ScatterProps.name by NumberOrStringOrNullProp()
 var ScatterProps.tooltipType by EnumOrNullProp(TooltipType::valueOf)
-var ScatterProps.xAxisId by NullNumberOrStringProp()
-var ScatterProps.yAxisId by NullNumberOrStringProp()
-var ScatterProps.zAxisId by NullNumberOrStringProp()
+var ScatterProps.xAxisId by NumberOrStringOrNullProp()
+var ScatterProps.yAxisId by NumberOrStringOrNullProp()
+var ScatterProps.zAxisId by NumberOrStringOrNullProp()

@@ -1,6 +1,6 @@
 package recharts.polar.pie
 
-import recharts.kotlin.properties.NullNumberOrStringProp
+import recharts.kotlin.properties.NumberOrStringOrNullProp
 import recharts.util.types.Coordinate
 import recharts.shape.sector.Props as SectorProps
 
@@ -13,4 +13,4 @@ external interface PieSectorDataItem : SectorProps {
     var value: Number?
 }
 
-var PieSectorDataItem.name by NullNumberOrStringProp()
+var PieSectorDataItem.name by NumberOrStringOrNullProp()
