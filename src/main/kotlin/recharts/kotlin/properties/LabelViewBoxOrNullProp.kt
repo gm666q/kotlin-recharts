@@ -1,22 +1,22 @@
 package recharts.kotlin.properties
 
 import recharts.component.label.LabelProps
-import recharts.component.label.LabelViewBox
+import recharts.component.label.ViewBox
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class LabelViewBoxOrNullProp : ReadWriteProperty<LabelProps, LabelViewBox?> {
-    override fun getValue(thisRef: LabelProps, property: KProperty<*>): LabelViewBox? =
+class LabelViewBoxOrNullProp : ReadWriteProperty<LabelProps, ViewBox?> {
+    override fun getValue(thisRef: LabelProps, property: KProperty<*>): ViewBox? =
         when (val value = thisRef.asDynamic()[property.name]) {
-            //is CartesianViewBox -> LabelViewBox.CartesianViewBox(value as CartesianViewBox)
-            //is PolarViewBox -> LabelViewBox.CartesianViewBox(value as PolarViewBox)
+            //is CartesianViewBox -> ViewBox.CartesianViewBox(value as CartesianViewBox)
+            //is PolarViewBox -> ViewBox.CartesianViewBox(value as PolarViewBox)
             else -> null
         }
 
-    override fun setValue(thisRef: LabelProps, property: KProperty<*>, value: LabelViewBox?) {
+    override fun setValue(thisRef: LabelProps, property: KProperty<*>, value: ViewBox?) {
         thisRef.asDynamic()[property.name] = when (value) {
-            is LabelViewBox.CartesianViewBox -> value.value
-            is LabelViewBox.PolarViewBox -> value.value
+            is ViewBox.CartesianViewBox -> value.value
+            is ViewBox.PolarViewBox -> value.value
             null -> null
         }
     }

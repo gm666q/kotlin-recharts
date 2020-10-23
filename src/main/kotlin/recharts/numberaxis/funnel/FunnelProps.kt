@@ -1,16 +1,11 @@
 package recharts.numberaxis.funnel
 
-import recharts.kotlin.properties.DataKeyOrNullProp
-import recharts.kotlin.properties.DataKeyProp
-import recharts.kotlin.properties.EnumOrNullProp
+import recharts.kotlin.properties.*
 import recharts.util.types.AnimationTiming
 import recharts.util.types.LegendType
 import recharts.util.types.TooltipType
 
-// TODO
 external interface FunnelProps : InternalFunnelProps {
-    //activeIndex?: number | number[];
-    //activeShape: ReactElement<SVGElement> | ((props: any) => SVGElement) | TrapezoidProps;
     var animateNewValues: Boolean?
     var animationBegin: Number?
     var animationDuration: Number?
@@ -23,6 +18,8 @@ external interface FunnelProps : InternalFunnelProps {
     var onAnimationEnd: (() -> Unit)?
 }
 
+var FunnelProps.activeIndex by FunnelActiveIndexOrNullProp()
+var FunnelProps.activeShape by FunnelActiveShapeProp()
 var FunnelProps.animationEasing by EnumOrNullProp(AnimationTiming::realValueOf)
 var FunnelProps.dataKey by DataKeyProp<Any>()
 var FunnelProps.legendType by EnumOrNullProp(LegendType::valueOf)

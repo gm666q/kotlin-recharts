@@ -7,8 +7,9 @@
 ### Changed
 
 - Add missing properties (`axisLine`, `domain`, `label`, `scale`, `tick` and `tickLine`) to `BaseAxisProps`.
+- Add missing properties (`activeIndex` and `activeShape`) to `FunnelProps`
 - Add missing properties (`content`, `position` and `viewBox`) to `LabelProps`.
-- Add missing properties (`animationEasing` and `type`) to `TreemapProps`.
+- Add missing properties (`animationEasing`, `nestIndexContent` and `type`) to `TreemapProps`.
 - Updated to Gradle 6.7.
 
 ### Fixed

@@ -3,8 +3,8 @@ package recharts.chart.treemap
 import react.ReactElement
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.DataKeyOrNullProp
-import recharts.kotlin.properties.DataKeyProp
 import recharts.kotlin.properties.EnumOrNullProp
+import recharts.kotlin.properties.TreemapNestIndexContentOrNullProp
 import recharts.util.types.TreemapNode
 
 // TODO
@@ -23,8 +23,6 @@ external interface Props : RechartsProps {
     var height: Number?
     var isAnimationActive: Boolean?
     var isUpdateAnimationActive: Boolean?
-
-    //nestIndexContent?: React.ReactElement | ((item: any, i: number) => any);
     var onAnimationEnd: (() -> Unit)?
     var onAnimationStart: (() -> Unit)?
     var onClick: ((node: TreemapNode) -> Unit)?
@@ -38,4 +36,5 @@ external interface Props : RechartsProps {
 var Props.animationEasing by EnumOrNullProp(TreemapAnimationEasing::realValueOf)
 var Props.dataKey by DataKeyOrNullProp<Any>()
 var Props.nameKey by DataKeyOrNullProp<Any>()
+var Props.nestIndexContent by TreemapNestIndexContentOrNullProp()
 var Props.type by EnumOrNullProp(TreemapType::valueOf)

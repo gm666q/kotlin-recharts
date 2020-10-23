@@ -24,7 +24,7 @@ sealed class LabelPosition(name: String, ordinal: Int) : Union<LabelPosition>(na
     object outside : LabelPosition("outside", 17)
     object right : LabelPosition("right", 18)
     object top : LabelPosition("top", 19)
-    data class Position(val value: LabelPositionPosition) : LabelPosition("Position", 20)
+    data class Object(val value: LabelPositionObject) : LabelPosition("Object", 20)
 
     companion object {
         fun valueOf(value: String): LabelPosition = when (value) {

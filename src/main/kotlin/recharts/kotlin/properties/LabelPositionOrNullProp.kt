@@ -8,8 +8,8 @@ import kotlin.reflect.KProperty
 class LabelPositionOrNullProp : ReadWriteProperty<LabelProps, LabelPosition?> {
     override fun getValue(thisRef: LabelProps, property: KProperty<*>): LabelPosition? =
         when (val value = thisRef.asDynamic()[property.name]) {
-            /*is LabelPositionPosition -> {
-                LabelPosition.Position(value as LabelPositionPosition)
+            /*is LabelPositionObject -> {
+                LabelPosition.Object(value as LabelPositionObject)
             }*/
             is String -> try {
                 LabelPosition.valueOf(value as String)
@@ -21,7 +21,7 @@ class LabelPositionOrNullProp : ReadWriteProperty<LabelProps, LabelPosition?> {
 
     override fun setValue(thisRef: LabelProps, property: KProperty<*>, value: LabelPosition?) {
         thisRef.asDynamic()[property.name] = when (value) {
-            is LabelPosition.Position -> value.value
+            is LabelPosition.Object -> value.value
             null -> null
             else -> value.name
         }
