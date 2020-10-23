@@ -19,10 +19,18 @@
 
 [Full Changelog](https://gitlab.com/gm666q/kotlin-recharts/-/compare/v2.0.0-beta.7-2...v2.0.0-beta.7-3)
 
+### Added
+
+- Add remaining components
+
 ## [v2.0.0-beta.7-2](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-2) - 2020-10-02
 
 [Full Changelog](https://gitlab.com/gm666q/kotlin-recharts/-/compare/v2.0.0-beta.7-1...v2.0.0-beta.7-2)
 
-## [v2.0.0-beta.7-1](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-1) - 2020-10-01
+### Added
+
+- Add most of the components
+
+## [v2.0.0-beta.7-1](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-1) - 2020-10-02
 
 - Initial release.
