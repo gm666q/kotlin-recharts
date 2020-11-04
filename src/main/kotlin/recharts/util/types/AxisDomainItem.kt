@@ -4,12 +4,12 @@ import recharts.kotlin.Union
 
 @Suppress("ClassName")
 sealed class AxisDomainItem(name: kotlin.String, ordinal: Int) : Union<AxisDomainItem>(name, ordinal) {
-    object auto : AxisDomainItem("auto", 0)
-    object dataMax : AxisDomainItem("dataMax", 1)
-    object dataMin : AxisDomainItem("dataMin", 2)
-    data class Function(val value: kotlin.Function<*>) : AxisDomainItem("Function", 3)
-    data class Number(val value: kotlin.Number) : AxisDomainItem("Number", 4)
-    data class String(val value: kotlin.String) : AxisDomainItem("String", 5)
+    data class Function(val value: kotlin.Function<*>) : AxisDomainItem("Function", 0)
+    data class Number(val value: kotlin.Number) : AxisDomainItem("Number", 1)
+    data class String(val value: kotlin.String) : AxisDomainItem("String", 2)
+    object auto : AxisDomainItem("auto", 3)
+    object dataMax : AxisDomainItem("dataMax", 4)
+    object dataMin : AxisDomainItem("dataMin", 5)
 
     companion object {
         fun valueOf(value: kotlin.String): AxisDomainItem = when (value) {

@@ -5,19 +5,19 @@ import recharts.kotlin.Union
 
 @Suppress("ClassName")
 sealed class CurveType(name: String, ordinal: Int) : Union<CurveType>(name, ordinal) {
-    object basis : CurveType("basis", 0)
-    object basisClosed : CurveType("basisClosed", 1)
-    object basisOpen : CurveType("basisOpen", 2)
-    object linear : CurveType("linear", 3)
-    object linearClosed : CurveType("linearClosed", 4)
-    object monotone : CurveType("monotone", 5)
-    object monotoneX : CurveType("monotoneX", 6)
-    object monotoneY : CurveType("monotoneY", 7)
-    object natural : CurveType("natural", 8)
-    object step : CurveType("step", 9)
-    object stepAfter : CurveType("stepAfter", 10)
-    object stepBefore : CurveType("stepBefore", 11)
-    data class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 12)
+    data class CurveFactory(val value: d3.shape.CurveFactory) : CurveType("CurveFactory", 0)
+    object basis : CurveType("basis", 1)
+    object basisClosed : CurveType("basisClosed", 2)
+    object basisOpen : CurveType("basisOpen", 3)
+    object linear : CurveType("linear", 4)
+    object linearClosed : CurveType("linearClosed", 5)
+    object monotone : CurveType("monotone", 6)
+    object monotoneX : CurveType("monotoneX", 7)
+    object monotoneY : CurveType("monotoneY", 8)
+    object natural : CurveType("natural", 9)
+    object step : CurveType("step", 10)
+    object stepAfter : CurveType("stepAfter", 11)
+    object stepBefore : CurveType("stepBefore", 12)
 
     companion object {
         fun valueOf(value: String): CurveType = when (value) {
