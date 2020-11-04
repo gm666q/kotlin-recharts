@@ -14,3 +14,6 @@ sealed class NumberOrString(name: kotlin.String, ordinal: Int) : Union<NumberOrS
         }
     }
 }
+
+fun Number.toNumberOrString() = NumberOrString.Number(this)
+fun String.toNumberOrString() = NumberOrString.String(this)

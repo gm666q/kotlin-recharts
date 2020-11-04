@@ -1,5 +1,6 @@
 package recharts.shape.curve
 
+import d3.shape.CurveFactory
 import recharts.kotlin.Union
 
 @Suppress("ClassName")
@@ -51,3 +52,5 @@ sealed class CurveType(name: String, ordinal: Int) : Union<CurveType>(name, ordi
         )
     }
 }
+
+fun CurveFactory.toCurveType() = CurveType.CurveFactory(this)

@@ -15,3 +15,7 @@ sealed class DataKey<T>(name: kotlin.String, ordinal: Int) : Union<DataKey<T>>(n
         fun <T> values(): Array<DataKey<T>> = arrayOf()
     }
 }
+
+fun <T> ((obj: T) -> Any).toDataKey() = DataKey.Function(this)
+fun <T> Number.toDataKey() = DataKey.Number<T>(this)
+fun <T> String.toDataKey() = DataKey.String<T>(this)

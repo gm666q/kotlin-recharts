@@ -1,6 +1,7 @@
 package recharts.numberaxis.funnel
 
 import org.w3c.dom.svg.SVGElement
+import react.ReactElement
 import recharts.kotlin.Union
 import recharts.shape.trapezoid.Props
 
@@ -17,3 +18,7 @@ sealed class FunnelActiveShape(name: String, ordinal: Int) : Union<FunnelActiveS
         fun values(): Array<FunnelActiveShape> = arrayOf()
     }
 }
+
+fun ((props: Any) -> SVGElement).toFunnelActiveShape() = FunnelActiveShape.Function(this)
+fun ReactElement.toFunnelActiveShape() = FunnelActiveShape.ReactElement(this)
+fun Props.toFunnelActiveShape() = FunnelActiveShape.TrapezoidProps(this)

@@ -26,3 +26,7 @@ sealed class AxisDomainItem(name: kotlin.String, ordinal: Int) : Union<AxisDomai
         )
     }
 }
+
+fun Function<*>.toAxisDomainItem() = AxisDomainItem.Function(this)
+fun Number.toAxisDomainItem() = AxisDomainItem.Number(this)
+fun String.toAxisDomainItem() = AxisDomainItem.String(this)

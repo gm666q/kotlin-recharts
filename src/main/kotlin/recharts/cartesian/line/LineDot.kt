@@ -1,11 +1,13 @@
 package recharts.cartesian.line
 
 import org.w3c.dom.svg.SVGElement
+import react.ReactElement
 import recharts.kotlin.Union
+import recharts.shape.dot.Props
 
 sealed class LineDot(name: String, ordinal: Int) : Union<LineDot>(name, ordinal) {
     data class Boolean(val value: kotlin.Boolean) : LineDot("Boolean", 0)
-    data class DotProps(val value: recharts.shape.dot.Props) : LineDot("DotProps", 1)
+    data class DotProps(val value: Props) : LineDot("DotProps", 1)
     data class Function(val value: (props: Any) -> SVGElement) : LineDot("Function", 2)
     data class ReactElement(val value: react.ReactElement/*<SVGElement>*/) : LineDot("ReactElement", 3)
 
@@ -20,7 +22,7 @@ sealed class LineDot(name: String, ordinal: Int) : Union<LineDot>(name, ordinal)
     }
 }
 
-/*fun boolean(value: Boolean): LineDot = LineDot.Boolean(value)
-fun dotProps(value: DotProps): LineDot = LineDot.DotProps(value)
-fun function(value: (props: Any) -> SVGElement): LineDot = LineDot.Function(value)
-fun reactElement(value: ReactElement*//*<SVGElement>*//*): LineDot = LineDot.ReactElement(value)*/
+fun Boolean.toLineDot() = LineDot.Boolean(this)
+fun Props.toLineDot() = LineDot.DotProps(this)
+fun ((props: Any) -> SVGElement).toLineDot() = LineDot.Function(this)
+fun ReactElement.toLineDot() = LineDot.ReactElement(this)

@@ -75,3 +75,5 @@ sealed class LabelPosition(name: String, ordinal: Int) : Union<LabelPosition>(na
         )
     }
 }
+
+fun LabelPositionObject.toLabelPosition() = LabelPosition.Object(this)

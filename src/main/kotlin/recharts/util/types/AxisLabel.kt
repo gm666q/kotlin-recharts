@@ -1,5 +1,7 @@
 package recharts.util.types
 
+import kotlinext.js.Object
+import react.ReactElement
 import recharts.kotlin.Union
 
 sealed class AxisLabel(name: kotlin.String, ordinal: Int) : Union<AxisLabel>(name, ordinal) {
@@ -16,3 +18,8 @@ sealed class AxisLabel(name: kotlin.String, ordinal: Int) : Union<AxisLabel>(nam
         fun values(): Array<AxisLabel> = arrayOf()
     }
 }
+
+fun Number.toAxisLabel() = AxisLabel.Number(this)
+fun Object.toAxisLabel() = AxisLabel.Object(this)
+fun ReactElement.toAxisLabel() = AxisLabel.ReactElement(this)
+fun String.toAxisLabel() = AxisLabel.String(this)

@@ -14,3 +14,6 @@ sealed class ViewBox(name: String, ordinal: Int) : Union<ViewBox>(name, ordinal)
         fun values(): Array<ViewBox> = arrayOf()
     }
 }
+
+fun CartesianViewBox.toLabelViewBox() = ViewBox.CartesianViewBox(this)
+fun PolarViewBox.toLabelViewBox() = ViewBox.PolarViewBox(this)

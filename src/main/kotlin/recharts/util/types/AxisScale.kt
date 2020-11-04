@@ -14,3 +14,6 @@ sealed class AxisScale(name: String, ordinal: Int) : Union<AxisScale>(name, ordi
         fun values(): Array<AxisScale> = arrayOf()
     }
 }
+
+fun Function<*>.toAxisScale() = AxisScale.Function(this)
+fun ScaleType.toAxisScale() = AxisScale.ScaleType(this)

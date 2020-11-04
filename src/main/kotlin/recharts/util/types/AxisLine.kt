@@ -16,3 +16,6 @@ sealed class AxisLine(name: String, ordinal: Int) : Union<AxisLine>(name, ordina
         fun values(): Array<AxisLine> = arrayOf()
     }
 }
+
+fun Boolean.toAxisLine() = AxisLine.Boolean(this)
+fun PresentationAttributes<SVGLineElement>.toAxisLine() = AxisLine.PresentationAttributes(this)

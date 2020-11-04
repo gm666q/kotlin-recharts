@@ -1,5 +1,6 @@
 package recharts.chart.treemap
 
+import react.ReactElement
 import recharts.kotlin.Union
 
 sealed class TreemapNestIndexContent(name: String, ordinal: Int) : Union<TreemapNestIndexContent>(name, ordinal) {
@@ -14,3 +15,6 @@ sealed class TreemapNestIndexContent(name: String, ordinal: Int) : Union<Treemap
         fun values(): Array<TreemapNestIndexContent> = arrayOf()
     }
 }
+
+fun ((item: Any, i: Number) -> Any).toTreemapNestIndexContent() = TreemapNestIndexContent.Function(this)
+fun ReactElement.toTreemapNestIndexContent() = TreemapNestIndexContent.ReactElement(this)

@@ -1,5 +1,6 @@
 package recharts.component.label
 
+import react.ReactElement
 import recharts.kotlin.Union
 
 // TODO
@@ -15,3 +16,5 @@ sealed class ContentType(name: String, ordinal: Int) : Union<ContentType>(name, 
         fun values(): Array<ContentType> = arrayOf()
     }
 }
+
+fun ReactElement.toLabelContentType() = ContentType.ReactElement(this)

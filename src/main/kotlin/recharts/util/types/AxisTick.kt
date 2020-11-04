@@ -2,6 +2,7 @@ package recharts.util.types
 
 import org.w3c.dom.svg.SVGElement
 import org.w3c.dom.svg.SVGTextElement
+import react.ReactElement
 import recharts.kotlin.Union
 
 sealed class AxisTick(name: String, ordinal: Int) : Union<AxisTick>(name, ordinal) {
@@ -20,3 +21,8 @@ sealed class AxisTick(name: String, ordinal: Int) : Union<AxisTick>(name, ordina
         fun values(): Array<AxisLine> = arrayOf()
     }
 }
+
+fun Boolean.toAxisTick() = AxisTick.Boolean(this)
+fun ((props: Any) -> SVGElement).toAxisTick() = AxisTick.Function(this)
+fun PresentationAttributes<SVGTextElement>.toAxisTick() = AxisTick.PresentationAttributes(this)
+fun ReactElement.toAxisTick() = AxisTick.ReactElement(this)
