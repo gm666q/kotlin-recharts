@@ -4,19 +4,30 @@
 
 [Full Changelog](https://gitlab.com/gm666q/kotlin-recharts/-/compare/v2.0.0-beta.7-4...HEAD)
 
+### Added
+
+- Example project
+
+### Changed
+
+- Updated kotlin-react and kotlin-react-dom to `17.0.0-pre.129-kotlin-1.4.10`
+
 ## [v2.0.0-beta.7-4](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-4) - 2020-11-04
 
 [Full Changelog](https://gitlab.com/gm666q/kotlin-recharts/-/compare/v2.0.0-beta.7-3...v2.0.0-beta.7-4)
 
+### Added
+
+- "to" conversion functions for Union types.
+
 ### Changed
 
-- Add missing properties (`activeDot`, `baseValue`, `dot`) to `AreaProps`.
-- Add missing properties (`axisLine`, `domain`, `label`, `scale`, `tick` and `tickLine`) to `BaseAxisProps`.
-- Add missing properties (`activeIndex` and `activeShape`) to `FunnelProps`.
-- Add missing properties (`content`, `position` and `viewBox`) to `LabelProps`.
-- Add missing properties (`animationEasing`, `nestIndexContent` and `type`) to `TreemapProps`.
-- Add "to" conversion functions for Union types.
-- Updated to Gradle 6.7.
+- Added missing properties (`activeDot`, `baseValue`, `dot`) to `AreaProps`.
+- Added missing properties (`axisLine`, `domain`, `label`, `scale`, `tick` and `tickLine`) to `BaseAxisProps`.
+- Added missing properties (`activeIndex` and `activeShape`) to `FunnelProps`.
+- Added missing properties (`content`, `position` and `viewBox`) to `LabelProps`.
+- Added missing properties (`animationEasing`, `nestIndexContent` and `type`) to `TreemapProps`.
+- Updated Gradle to `6.7`.
 
 ### Fixed
 
@@ -28,7 +39,7 @@
 
 ### Added
 
-- Add remaining components
+- Remaining components
 
 ## [v2.0.0-beta.7-2](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-2) - 2020-10-02
 
@@ -36,7 +47,7 @@
 
 ### Added
 
-- Add most of the components
+- Most of the components
 
 ## [v2.0.0-beta.7-1](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-1) - 2020-10-02
 

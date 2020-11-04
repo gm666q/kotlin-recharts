@@ -30,8 +30,8 @@ kotlin {
     sourceSets {
         main {
             dependencies {
-                api("org.jetbrains:kotlin-react:16.13.1-pre.124-kotlin-1.4.10")
-                api("org.jetbrains:kotlin-react-dom:16.13.1-pre.124-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react:17.0.0-pre.129-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react-dom:17.0.0-pre.129-kotlin-1.4.10")
 
                 api(npm("recharts", "^2.0.0-beta.7"))
             }
