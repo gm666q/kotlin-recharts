@@ -1,6 +1,6 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 
-version = "2.0.0-beta.7-3"
+version = "2.0.0-beta.7-4"
 
 bintray {
     key = System.getenv("BINTRAY_KEY")
