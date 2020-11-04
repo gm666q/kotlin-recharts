@@ -3,6 +3,7 @@ package recharts.cartesian.referencearea
 import recharts.kotlin.properties.EnumOrNullProp
 import recharts.kotlin.properties.NumberOrStringOrNullProp
 
+// TODO
 external interface ReferenceAreaProps : InternalReferenceAreaProps {
     var alwaysShow: Boolean?
     var isFront: Boolean?
