@@ -30,10 +30,10 @@ kotlin {
     sourceSets {
         main {
             dependencies {
-                api("org.jetbrains:kotlin-react:17.0.0-pre.129-kotlin-1.4.10")
-                api("org.jetbrains:kotlin-react-dom:17.0.0-pre.129-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react:17.0.0-pre.129-kotlin-1.4.20")
+                api("org.jetbrains:kotlin-react-dom:17.0.0-pre.129-kotlin-1.4.20")
 
-                api(npm("recharts", "^2.0.0-beta.7"))
+                api(npm("recharts", "^2.0.0-beta.8"))
             }
         }
         test {
@@ -47,8 +47,8 @@ kotlin {
 plugins {
     id("com.jfrog.bintray") version "1.8.5"
     id("org.gradle.maven-publish")
-    id("org.jetbrains.dokka") version "1.4.10"
-    kotlin("js") version "1.4.10"
+    id("org.jetbrains.dokka") version "1.4.10.2"
+    kotlin("js") version "1.4.20"
 }
 
 publishing {
@@ -124,5 +124,5 @@ tasks.withType<DokkaTask>().configureEach {
 
 tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = "6.7"
+    gradleVersion = "6.7.1"
 }
