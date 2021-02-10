@@ -1,25 +1,6 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 
-version = "2.0.0-beta.7-4"
-
-bintray {
-    key = System.getenv("BINTRAY_KEY")
-    pkg.run {
-        desc = "Kotlin wrapper for Recharts library"
-        issueTrackerUrl = "https://gitlab.com/gm666q/kotlin-recharts/-/issues"
-        name = project.name
-        publicDownloadNumbers = true
-        repo = "kotlin-recharts"
-        setLicenses("Apache-2.0")
-        vcsUrl = "https://gitlab.com/gm666q/kotlin-recharts.git"
-        version.run {
-            name = project.version.toString()
-        }
-        websiteUrl = "https://gitlab.com/gm666q/kotlin-recharts"
-    }
-    setPublications("kotlin")
-    user = System.getenv("BINTRAY_USER")
-}
+version = "2.0.6-1"
 
 group = "space.gm666q"
 
@@ -30,10 +11,10 @@ kotlin {
     sourceSets {
         main {
             dependencies {
-                api("org.jetbrains:kotlin-react:17.0.0-pre.129-kotlin-1.4.10")
-                api("org.jetbrains:kotlin-react-dom:17.0.0-pre.129-kotlin-1.4.10")
+                api("org.jetbrains:kotlin-react:17.0.1-pre.144-kotlin-1.4.30")
+                api("org.jetbrains:kotlin-react-dom:17.0.1-pre.144-kotlin-1.4.30")
 
-                api(npm("recharts", "^2.0.0-beta.7"))
+                api(npm("recharts", "^2.0.6"))
             }
         }
         test {
@@ -45,10 +26,9 @@ kotlin {
 }
 
 plugins {
-    id("com.jfrog.bintray") version "1.8.5"
     id("org.gradle.maven-publish")
-    id("org.jetbrains.dokka") version "1.4.10"
-    kotlin("js") version "1.4.10"
+    id("org.jetbrains.dokka") version "1.4.20"
+    kotlin("js") version "1.4.30"
 }
 
 publishing {
@@ -115,14 +95,15 @@ repositories {
     mavenCentral()
 }
 
-tasks.withType<DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
+tasks {
+    withType<DokkaTask>().configureEach {
+        dokkaSourceSets {
+            named("main") {
+            }
         }
     }
-}
-
-tasks.wrapper {
-    distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = "6.7"
+    wrapper {
+        distributionType = Wrapper.DistributionType.ALL
+        gradleVersion = "6.8.2"
+    }
 }

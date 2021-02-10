@@ -1,3 +1,19 @@
+/*
+ * Copyright 2020-2021 Jan Śmiałkowski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package recharts.polar.radialbar
 
 import recharts.kotlin.RechartsProps
@@ -24,7 +40,8 @@ external interface RadialBarProps : RechartsProps {
     var forceCornerRadius: Boolean?
     var hide: Boolean?
     var isAnimationActive: Boolean?
-    var label: Any?
+
+    //label?: ImplicitLabelListType<any>;
     var maxBarSize: Number?
     var minPointSize: Number?
     var onAnimationEnd: (() -> Unit)?
@@ -41,4 +58,5 @@ var RadialBarProps.cornerRadius by NumberOrStringOrNullProp()
 var RadialBarProps.dataKey by DataKeyProp<Any>()
 var RadialBarProps.legendType by EnumOrNullProp(LegendType::valueOf)
 var RadialBarProps.radiusAxisId by NumberOrStringOrNullProp()
+var RadialBarProps.stackId by NumberOrStringOrNullProp()
 var RadialBarProps.tooltipType by EnumOrNullProp(TooltipType::valueOf)

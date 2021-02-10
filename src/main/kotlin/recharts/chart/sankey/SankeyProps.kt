@@ -1,20 +1,38 @@
+/*
+ * Copyright 2020-2021 Jan Śmiałkowski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package recharts.chart.sankey
 
-import react.ReactElement
 import recharts.kotlin.RechartsProps
 import recharts.kotlin.properties.DataKeyOrNullProp
 import recharts.util.types.Margin
 
+// TODO
 external interface SankeyProps : RechartsProps {
     var children: Any?
     var className: String?
     var data: SankeyData
     var height: Number?
     var iterations: Number?
-    var link: ReactElement
+
+    //link?: SankeyLinkOptions;
     var linkCurvature: Number?
     var margin: Margin?
-    var node: ReactElement?
+
+    //node?: SankeyNodeOptions;
     var nodePadding: Number?
     var nodeWidth: Number?
     var onClick: Any?

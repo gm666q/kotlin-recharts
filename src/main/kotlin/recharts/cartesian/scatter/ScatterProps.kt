@@ -1,3 +1,19 @@
+/*
+ * Copyright 2020-2021 Jan Śmiałkowski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package recharts.cartesian.scatter
 
 import recharts.kotlin.RechartsProps
@@ -13,20 +29,22 @@ import recharts.util.types.TooltipType
 external interface ScatterProps : RechartsProps {
     var activeIndex: Number?
 
-    //activeShape?: ReactElement<SVGElement> | ((props: any) => SVGElement) | SymbolsProps;
+    //activeShape?: ReactElement<SVGElement> | ((props: any) => ReactElement<SVGElement>) | SymbolsProps;
     var animationBegin: Number?
     var animationDuration: Number?
     var animationId: Number?
-    var className: String
+    var className: String?
     var data: Array<Any>?
     var hide: Boolean?
     var isAnimationActive: Boolean?
+
+    //label?: ImplicitLabelListType<any>;
     var left: Number?
 
-    //line?: ReactElement<SVGElement> | ((props: any) => SVGElement) | CurveProps | boolean;
+    //line?: ReactElement<SVGElement> | ((props: any) => ReactElement<SVGElement>) | CurveProps | boolean;
     var points: Array<ScatterPointItem>?
 
-    //shape?: SymbolType | ReactElement<SVGElement> | ((props: any) => SVGElement);
+    //shape?: SymbolType | ReactElement<SVGElement> | ((props: any) => ReactElement<SVGElement>);
     var top: Number?
     //xAxis?: Omit<XAxisProps, 'scale'> & { scale: D3Scale<string | number> };
     //yAxis?: Omit<YAxisProps, 'scale'> & { scale: D3Scale<string | number> };
