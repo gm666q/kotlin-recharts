@@ -21,11 +21,11 @@ kotlin {
     sourceSets {
         main {
             dependencies {
-                implementation("org.jetbrains:kotlin-react:17.0.0-pre.129-kotlin-1.4.10")
-                implementation("org.jetbrains:kotlin-react-dom:17.0.0-pre.129-kotlin-1.4.10")
-                implementation("org.jetbrains:kotlin-styled:5.2.0-pre.129-kotlin-1.4.10")
+                implementation("org.jetbrains:kotlin-react:17.0.1-pre.144-kotlin-1.4.30")
+                implementation("org.jetbrains:kotlin-react-dom:17.0.1-pre.144-kotlin-1.4.30")
+                implementation("org.jetbrains:kotlin-styled:5.2.0-pre.144-kotlin-1.4.30")
                 implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.2")
-                implementation("space.gm666q:kotlin-recharts:2.0.0-beta.7-4")
+                implementation("space.gm666q:kotlin-recharts:2.0.6-1")
             }
         }
         test {
@@ -37,7 +37,7 @@ kotlin {
 }
 
 plugins {
-    kotlin("js") version "1.4.10"
+    kotlin("js") version "1.4.30"
 }
 
 repositories {
@@ -51,7 +51,7 @@ repositories {
 
 tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = "6.7"
+    gradleVersion = "6.8.2"
 }
 
 version = "0.0.1"

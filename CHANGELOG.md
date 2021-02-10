@@ -13,7 +13,10 @@
 - Add missing properties (`interval`, `ticks`) to `XAxisProps`.
 - Add missing properties (`interval`, `ticks`) to `YAxisProps`.
 - Add missing properties (`scale`) to `ZAxisProps`.
-- Updated kotlin-react and kotlin-react-dom to `17.0.0-pre.129-kotlin-1.4.10`
+- Updated Gradle to `6.8.2`
+- Updated kotlin to `1.4.30`
+- Updated kotlin-react and kotlin-react-dom to `17.0.1-pre.144-kotlin-1.4.30`
+- Updated recharts to `2.0.6`
 
 ## [v2.0.0-beta.7-4](https://gitlab.com/gm666q/kotlin-recharts/-/tree/v2.0.0-beta.7-4) - 2020-11-04
 

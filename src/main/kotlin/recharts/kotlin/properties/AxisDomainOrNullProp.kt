@@ -1,11 +1,27 @@
+/*
+ * Copyright 2020-2021 Jan Śmiałkowski
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package recharts.kotlin.properties
 
+import recharts.kotlin.RechartsProps
 import recharts.util.types.AxisDomainItem
-import recharts.util.types.BaseAxisProps
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-class AxisDomainOrNullProp : ReadWriteProperty<BaseAxisProps, Pair<AxisDomainItem, AxisDomainItem>?> {
+class AxisDomainOrNullProp : ReadWriteProperty<RechartsProps, Pair<AxisDomainItem, AxisDomainItem>?> {
     private fun getInnerValue(value: Any?) = when (value) {
         is Function<*> -> AxisDomainItem.Function(value)
         is Number -> AxisDomainItem.Number(value)
@@ -17,7 +33,7 @@ class AxisDomainOrNullProp : ReadWriteProperty<BaseAxisProps, Pair<AxisDomainIte
         else -> throw NoWhenBranchMatchedException()
     }
 
-    override fun getValue(thisRef: BaseAxisProps, property: KProperty<*>) =
+    override fun getValue(thisRef: RechartsProps, property: KProperty<*>) =
         when (val value = thisRef.asDynamic()[property.name]) {
             is Array<*> -> if (value.size == 2) Pair(getInnerValue(value[0]), getInnerValue(value[1])) else null
             else -> null
@@ -31,7 +47,7 @@ class AxisDomainOrNullProp : ReadWriteProperty<BaseAxisProps, Pair<AxisDomainIte
     }
 
     override fun setValue(
-        thisRef: BaseAxisProps,
+        thisRef: RechartsProps,
         property: KProperty<*>,
         value: Pair<AxisDomainItem, AxisDomainItem>?
     ) {
